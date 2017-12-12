@@ -25,7 +25,7 @@ function init() {
     clearCacheAndLogs
 
     export APP_ENV=$env
-    composer install --no-dev --optimize-autoloader
+    composer install --no-dev --classmap-authoritative
     [ "$?" != "0" ] && exit 1
 
     if [ "$env" == "news" ]; then
